@@ -11,7 +11,7 @@ Below is the UML diagram representing the structure of the Biquadris project, fe
 ## Display
 Our game supports both text-based and graphics-based displays using the XWindows library. The text display provides a simple and efficient way to interact with the game, while the graphics display enhances the visual appeal and creates a more immersive gaming experience.
 
-<img src="/images/demo1.png" width="500">  <img src="/images/text.png" width="250">  
+<img src="/images/demo1.png" width="500">  <img src="/images/text.png" width="220">  
 <img src="/images/nosfx.png" width="500">
 
 ## Gameplay
