@@ -12,7 +12,7 @@ Our final project has over 27 classes, each designed with encapsulation in mind,
 
 ## Display
 Biquadris supports both text-based and graphics-based displays using the XWindows library. The text display provides a simple and efficient way to interact with the game, while the graphics display enhances the visual appeal and offers a more immersive gaming experience.
-<img src="/images/demo1.png" width="400"> <img src="/images/demo1.png" width="400"> <img src="/images/text.png" width="200">  
+<img src="/images/demo1.png" width="400"> <img src="/images/demo1.png" width="400"> <img src="/images/text.png" width="150">  
 
 ## Gameplay
 The primary objective of Biquadris remains similar to Tetris - to manipulate falling blocks (tetrominoes) and create complete horizontal lines to clear the board. Players are free to choose between multiple levels(0-4) to increase/decrease difficulty.
@@ -21,8 +21,6 @@ The primary objective of Biquadris remains similar to Tetris - to manipulate fal
 * We added a **togglesfx** command to turn on/off a better graphics display, so graphics can be chosen to render faster with lower graphics settings.
 * **blind**, **heavy**, **force**: prompts player to choose a special command when 2 or more rows are cleared at a time.
 * command names are auto-filled to completion, and can take a multiplier prefix to be repeated multiple times. 
-<img src="/images/blind.png" width="500"> 
-<sub>_player 2 with blind effect on_</sub>
 
 ### Source Code
 Due to Policy 71, the source code is only available upon request.
