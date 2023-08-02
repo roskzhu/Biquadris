@@ -2,7 +2,7 @@
 Biquadris is a variation of the game Tetris, expanded for two-player competition. 
 A team of peers and I developed this video game for the final project of our CS246 (Object-Oriented Software Development) course. 
 
-Coded in C++, the project follows object-oriented programming principles, employs the observer design pattern, and is structured using the Model-View-Controller (MVC) architecture. To ensure maintainability and scalability, the project is designed with low coupling and high cohesion. Each module is responsible for a single task and interacts with others through ca  lls to public methods. 
+Coded in C++, the project follows object-oriented programming principles, employs the observer design pattern, and is structured using the Model-View-Controller (MVC) architecture. To ensure maintainability and scalability, the project is designed with low coupling and high cohesion. Each module is responsible for a single task and interacts with others through calls to public methods. 
 
 ## UML Diagram
 Below is the UML diagram representing the structure of the Biquadris project, featuring over 27 classes, each designed with encapsulation in mind, using private fields to maintain data integrity. All superclasses are abstract to encourage polymorphism, enabling a flexible and extensible design.
@@ -10,6 +10,7 @@ Below is the UML diagram representing the structure of the Biquadris project, fe
 
 ## Display
 Our game supports both text-based and graphics-based displays using the XWindows library. The text display provides a simple and efficient way to interact with the game, while the graphics display enhances the visual appeal and creates a more immersive gaming experience.
+
 <img src="/images/demo1.png" width="350"> <img src="/images/demo1.png" width="350"> <img src="/images/text.png" width="150">  
 
 ## Gameplay
