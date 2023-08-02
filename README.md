@@ -11,7 +11,7 @@ Below is the UML diagram representing the structure of the Biquadris project, fe
 ## Display
 Our game supports both text-based and graphics-based displays using the XWindows library. The text display provides a simple and efficient way to interact with the game, while the graphics display enhances the visual appeal and creates a more immersive gaming experience.
 
-<img src="/images/demo1.png" width="350"> <img src="/images/demo1.png" width="350"> <img src="/images/text.png" width="150">  
+<img src="/images/demo1.png" width="350"> <img src="/images/demo1.png" width="350"> <img src="/images/text.png" width="130">  
 
 ## Gameplay
 The primary objective of Biquadris remains similar to Tetris – to manipulate falling blocks and complete horizontal lines to clear the board. Players are free to choose between multiple difficulty levels (0-4) to adjust the game's challenge.
