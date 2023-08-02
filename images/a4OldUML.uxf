@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>lt=&lt;&lt;-
+</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>640</y>
+      <w>192</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>/Observer/
+--
+/+ notify() : void /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>144</y>
+      <w>120</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Cell
+--
+- c : char
+--
++ isEmpty() : bool
++ set() : void
++ unset() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>144</y>
+      <w>192</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Board
+--
+- rows : int
+- cols : int
+- cells : vector&lt;std::shared_ptr<Cell>&gt;
+--
++ getState() : char
++ notifyObservers() : void
++ attach() : void
++ detach() : void
++ render() : void
++ reset() : void
++ rowComplete() : bool
++ blind() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>112</x>
+      <y>160</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=11x18
+m1=cells</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1072</x>
+      <y>144</y>
+      <w>256</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- board : std::shared_ptr<Board>
+- currentBlock : std::shared_ptr<Block>
+- nextBlock : std::shared_ptr<Block>
+- level : Level*
+- curScore: int
+- highScore : int
+- blind : bool
+- force : bool
+--
++ getScore() : int
++ getCurrentBlock() : std::shared_ptr<Block>&amp;
++ getNextBlock() : std::shared_ptr<Block>&amp;
++ updateScore(numRows : int) : void
++ updateLevel(level : int) : void
++ setCurrentBlock(block : std::shared_ptr<Block>) : void
++ setNextBlock(block : std::shared_ptr<Block>) : void
++ moveBlock(direction: string, distance: int) : bool
++ rotateBlock(direction: string) : bool
++ dropBlock() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>128</x>
+      <y>304</y>
+      <w>104</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>80</y>
+      <w>928</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1
+m1=board
+</panel_attributes>
+    <additional_attributes>1110.0;80.0;1110.0;20.0;10.0;20.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>88</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>448</y>
+      <w>192</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/Subject/
+--
+- observers: vector&lt;std::shared_ptr<Observer>&gt;
+--
+/+ getState() : char/
+/+ notifyObservers() : void/
+/+ attach() : void/
+/+ detach() : void/
+/+ render() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>576</y>
+      <w>192</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>GraphicsObserver
+--
+- subject: std::shared_ptr<Board>
+- top : int
+- bottom : int
+- left : int
+- right : int
+- window : XWindow
+--
++ notify() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>144</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>LevelOne
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>128</x>
+      <y>552</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;
+m1=0..n
+m2=observers</panel_attributes>
+    <additional_attributes>110.0;130.0;10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>248</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>/Level/
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>400</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>TextObserver
+--
+- subject: std::shared_ptr<Board>
+- top : int
+- bottom : int
+- left : int
+- right : int
+--
++ notify() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>136</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>LevelZero
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>248</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>LevelTwo
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>352</y>
+      <w>216</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>LevelThree
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>528</y>
+      <w>256</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>/Block/
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1032</x>
+      <y>696</y>
+      <w>272</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>JBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1192</x>
+      <y>872</y>
+      <w>272</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>IBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>872</y>
+      <w>264</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>LBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>696</y>
+      <w>248</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>TBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>1032</y>
+      <w>248</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>ZBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>656</y>
+      <w>168</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;250.0;10.0;250.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>648</y>
+      <w>104</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>472</y>
+      <w>200</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1608</x>
+      <y>280</y>
+      <w>168</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>368</y>
+      <w>200</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=currentBlock, nextBlock
+
+
+
+m2=1</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;290.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>656</y>
+      <w>176</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;200.0;30.0;200.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>656</y>
+      <w>344</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;410.0;250.0;410.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>872</x>
+      <y>656</y>
+      <w>160</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>656</y>
+      <w>24</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>272</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=1
+m1=level</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>360</y>
+      <w>216</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>LevelFour
+--
+- random : bool
+--
+/+ createBlock() : char/
+/+ generateFromFile(file: string) : char /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>872</y>
+      <w>264</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>OBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>1032</y>
+      <w>264</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>SBlock
+--
+- subject : std::shared_ptr<Board>
+- ch : char
+- orientation : int
+- coordinates : vec&lt;(pair&lt;int row,int col&gt;)&gt;
+--
+/+ rotate() : void/
+/+ move(direction : char) : void/
+/+ drop() : void/
+/+ charAt(row : int, col : int) : char/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>656</y>
+      <w>184</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;210.0;250.0;210.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>656</y>
+      <w>304</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>360.0;10.0;360.0;250.0;10.0;250.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>208</x>
+      <y>792</y>
+      <w>280</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Xwindow
+--
+- s : int
+- w : Window
+- d : Display*
+--
++ fillRectangle(int x, int y, int width, int height, int colour) : void
++ drawString(int x, int y, string msg) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>688</y>
+      <w>296</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+m1=window</panel_attributes>
+    <additional_attributes>300.0;10.0;300.0;90.0;10.0;90.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>320</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+m2=subject
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;320.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>320</y>
+      <w>232</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+m1=0..1
+m2=subject
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0;270.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>320</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1608</x>
+      <y>184</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;90.0;130.0;90.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1608</x>
+      <y>280</y>
+      <w>168</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;140.0;190.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1504</x>
+      <y>200</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1504</x>
+      <y>312</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>200</y>
+      <w>264</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>/Decorator/
+--
+- component : std::shared_ptr<Player>
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>224</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>328</y>
+      <w>264</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>HeavyPlayer
+--
+- component : std::shared_ptr<Player>
+--
++ moveBlock(direction: string, distance: int) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>256</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>552</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Game
+-
+- players: vector&lt;std::shared_ptr<Player>&gt;
+- boards: vector&lt;std::shared_ptr<Board>&gt;
+- currentPlayer: int
+
+--
++ runGame(): void
++ restartGame(): void
++ initBoard(): void
++ switchPlayer(): void
++ forceOpponent(block: char): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1304</x>
+      <y>368</y>
+      <w>112</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=players
+m2=2
+</panel_attributes>
+    <additional_attributes>120.0;320.0;10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
