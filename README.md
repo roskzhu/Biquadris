@@ -12,14 +12,10 @@ Our final project has over 27 classes, each designed with encapsulation in mind,
 
 ## Display
 Biquadris supports both text-based and graphics-based displays using the XWindows library. The text display provides a simple and efficient way to interact with the game, while the graphics display enhances the visual appeal and offers a more immersive gaming experience.
-| <img src="/images/demo1.png" width="400">| 
-|:--:| 
-| _graphics display with sfx on_ |
-<p>
-   
-    <em></em>
-</p>
-<figure> <img src="/images/demo1.png" width="400">  <figcaption>graphics display with sfx on</figcaption> </figure> <figure> <img src="/images/nosfx.png" width="400">  <figcaption>graphics display with sfx off</figcaption> </figure> <figure> <img src="/images/text.png" width="200">  <figcaption>text display</figcaption> </figure>
+| <img src="/images/demo1.png" width="400">| <img src="/images/demo1.png" width="400">|
+|:--:| :--:| 
+| _graphics display with sfx on_ |_graphics display with sfx on_|
+<figure> <img src="/images/demo1.png" width="400">  <figcaption></figcaption> </figure> <figure> <img src="/images/nosfx.png" width="400">  <figcaption>graphics display with sfx off</figcaption> </figure> <figure> <img src="/images/text.png" width="200">  <figcaption>text display</figcaption> </figure>
 
 ## Gameplay
 The primary objective of Biquadris remains similar to Tetris - to manipulate falling blocks (tetrominoes) and create complete horizontal lines to clear the board. Players are free to choose between multiple levels(0-4) to increase/decrease difficulty.
