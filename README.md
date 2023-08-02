@@ -24,4 +24,4 @@ The primary objective of Biquadris remains similar to Tetris – to manipulate f
 
 
 
-# > Due to Policy 71, the source code is only available upon request.
+> ### Due to Policy 71, the source code is only available upon request.
