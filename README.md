@@ -20,8 +20,8 @@ The primary objective of Biquadris remains similar to Tetris – to manipulate f
 ### Additional Special Features
 * We added a **togglesfx** command to toggle graphics effects, allowing players to choose between faster rendering with lower graphics settings. 
 * **blind**, **heavy**, **force** commands prompt players to make special choices when clearing multiple rows simultaneously. 
-* command names are auto-completed, and take an optional multiplier prefix to repeat actions multiple times. 
+* Command names are auto-completed, and take an optional multiplier prefix to repeat actions multiple times. 
 
 
 
-> Due to Policy 71, the source code is only available upon request.
+# > Due to Policy 71, the source code is only available upon request.
